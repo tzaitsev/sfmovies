@@ -1,0 +1,4 @@
+assets/
+coverage/
+coverage-*/
+scripts/__testfixtures__
