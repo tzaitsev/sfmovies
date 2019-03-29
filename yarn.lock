@@ -828,10 +828,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-lob@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-lob/-/eslint-config-lob-3.0.0.tgz#8516d644f71143e21ce7f9f533d0131d2001939e"
-  integrity sha512-ANT5ZxbkU6zqG0Jz5I/LNmJMvAVHZ6hL+nGH83cJ9+PE4VWRVyuOekDEIVqa3K3OLqES3YG08wA0vKk0CfsyyQ==
+eslint-config-lob@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-lob/-/eslint-config-lob-4.0.0.tgz#a31376d0a305637e150197dd780489a845d3e907"
+  integrity sha512-TZ3OKA7Li0w8QNANDdxDsFJvEG7rJL1Aq+PMKK2sj8CiPn2QVPe9faZ8FqRThraYak0bxxMvX91MIQ2KIlLlmA==
   dependencies:
     eslint-plugin-lob "^1.0.1"
 
@@ -853,7 +853,7 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
   integrity sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==
 
-eslint@^4.9.1:
+eslint@^4.19.1:
   version "4.19.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   integrity sha512-bT3/1x1EbZB7phzYu7vCr1v3ONuzDtX8WjuM9c0iYxe+cq+pwcKEoQjl7zd3RpC6YOLgnSy3cTN58M2jcoPDIQ==
