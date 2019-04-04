@@ -23,6 +23,36 @@ describe('movies integration', () => {
 
   });
 
+  describe('location', () => {
+
+    it('associates a location', async () => {
+      const payload = { location: 'Berkeley' };
+
+      const response = await Movies.inject({
+        url: '/movies/1/locations',
+        method: 'POST',
+        payload
+      });
+
+      expect(response.statusCode).to.eql(200);
+      expect(response.result.object).to.eql('movie');
+      expect(response.result.locations).to.include.members(['Berkeley']);
+    });
+
+    it('does not associate a location multiple times', async () => {
+      const payload = { location: 'Berkeley' };
+
+      const response = await Movies.inject({
+        url: '/movies/1/locations',
+        method: 'POST',
+        payload
+      });
+
+      expect(response.statusCode).to.eql(500);
+    });
+
+  });
+
   describe('get', () => {
 
     it('gets a list of movies', async () => {
@@ -46,7 +76,18 @@ describe('movies integration', () => {
       expect(response.statusCode).to.eql(200);
       expect(response.result['0'].title).to.eql('180');
       expect(response.result.length).to.equal(1);
+    });
 
+    it('gets a movie with a location', async () => {
+      const response = await Movies.inject({
+        url: '/movies?location=San%20Francisco',
+        method: 'GET'
+      });
+
+      expect(response.statusCode).to.eql(200);
+      expect(response.result['0'].title).to.eql('180');
+      expect(response.result['1'].title).to.eql('24 Hours on Craigslist');
+      expect(response.result.length).to.equal(3);
     });
 
     it('supports fuzzy titles', async () => {
@@ -126,7 +167,6 @@ describe('movies integration', () => {
       expect(response.statusCode).to.eql(200);
       expect(response.result['0'].title).to.eql('A Jitney Elopement');
       expect(response.result.length).to.equal(1);
-
     });
 
   });

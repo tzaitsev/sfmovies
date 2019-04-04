@@ -1,0 +1,14 @@
+[
+  {
+    "movie_id": 1,
+    "location": "San Francisco"
+  },
+  {
+    "movie_id": 1,
+    "location": "Palo Alto"
+  },
+  {
+    "movie_id": 2,
+    "location": "San Francisco"
+  }
+]
