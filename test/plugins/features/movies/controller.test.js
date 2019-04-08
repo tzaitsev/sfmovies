@@ -14,6 +14,17 @@ describe('movie controller', () => {
 
   });
 
+  describe('associates a location to a movie', () => {
+
+    it('creates a movie and associates a location', async () => {
+      const payload = { title: 'TestLocationMovies!' };
+      const movie = await Controller.create(payload);
+      const movieWithLocation = await Controller.associateLocation({ movie_id: movie.id }, { location: 'San Francisco' });
+      expect(movieWithLocation.serialize().locations).to.include('San Francisco');
+    });
+
+  });
+
   describe('get', () => {
 
     it('returns a list of movies if no query params are passed', async () => {
@@ -65,6 +76,13 @@ describe('movie controller', () => {
       expect(movies.models['0'].attributes.title).to.eql('Barbary Coast');
       expect(movies.models['1'].attributes.title).to.eql('The Jazz Singer');
       expect(movies.models.length).to.equal(2);
+    });
+
+    it('returns a list of movies with a location', async () => {
+      const movies = await Controller.findAll({ location: 'San Francisco' });
+      expect(movies.models['0'].attributes.title).to.eql('180');
+      expect(movies.models['1'].attributes.title).to.eql('24 Hours on Craigslist');
+      expect(movies.models.length).to.equal(3);
     });
 
   });
